@@ -26,6 +26,12 @@ namespace OnlineShopping.Controllers
             return View(await onlineShoppingContext.ToListAsync());
         }
 
+        public async Task<IActionResult> ProductDashboard()
+        {
+            var onlineShoppingContext = _context.Product.Include(p => p.Category);
+            return View(await onlineShoppingContext.ToListAsync());
+        }
+
         // GET: Product/Details/5
         public async Task<IActionResult> Details(int? id)
         {
