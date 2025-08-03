@@ -72,6 +72,7 @@ namespace OnlineShopping.Controllers
                 FileStream fs = new FileStream(path + file, FileMode.Create);
                 await Photo.CopyToAsync(fs);
                 product.ProductPhoto = "ProductImages/" + file;
+                fs.Close();
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -102,7 +103,7 @@ namespace OnlineShopping.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Price,ProductPhoto,CategoryId")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Price,ProductPhoto,CategoryId")] Product product, IFormFile EditPhoto)
         {
             if (id != product.Id)
             {
@@ -113,6 +114,12 @@ namespace OnlineShopping.Controllers
             {
                 try
                 {
+                    string path = Environment.CurrentDirectory + "/wwwroot/ProductImages/";
+                    string file = EditPhoto.FileName;
+                    FileStream fs = new FileStream(path + file, FileMode.Create);
+                    await EditPhoto.CopyToAsync(fs);
+                    product.ProductPhoto = "ProductImages/" + file;
+                    fs.Close();
                     _context.Update(product);
                     await _context.SaveChangesAsync();
                 }
