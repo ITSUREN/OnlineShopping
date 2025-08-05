@@ -28,8 +28,15 @@ namespace OnlineShopping.Controllers
 
         public async Task<IActionResult> ProductDashboard(string? title)
         {
-            var onlineShoppingContext = _context.Product.Include(p => p.Category);
-            return View(await onlineShoppingContext.ToListAsync());
+            if (string.IsNullOrEmpty(title))
+            {
+                var onlineShoppingContext = _context.Product.Include(p => p.Category);
+                return View(await onlineShoppingContext.ToListAsync());
+            } else
+            {
+                var searchProducts = _context.Product.Include(p => p.Category).Where(p => p.Title.Contains(title));
+                return View(await searchProducts.ToListAsync());
+            }
         }
 
         // GET: Product/Details/5
