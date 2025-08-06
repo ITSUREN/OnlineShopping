@@ -65,6 +65,41 @@ namespace OnlineShopping.Controllers
             return View(user);
         }
 
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        // POST: User/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register([Bind("UserName,Password, ConfirmPassword")] RegisterViewModel registerViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var userExist = (from u in _context.User where u.UserName == registerViewModel.UserName select u).ToList();
+                if (userExist.Count >0)
+                {
+                    ViewData["ErrorMessage"] = "User already exists. Please try a different username.";
+                }
+                else
+                {
+                    User user = new User
+                    {
+                        UserName = registerViewModel.UserName,
+                        Password = registerViewModel.Password,
+                        UserType = "normal" // Default user type
+                    };
+                    _context.Add(user);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index)); // needs to redirect to login page
+                }
+            }
+            return View(registerViewModel);
+        }
+
         // GET: User/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
