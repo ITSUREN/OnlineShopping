@@ -100,6 +100,35 @@ namespace OnlineShopping.Controllers
             return View(registerViewModel);
         }
 
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        // POST: User/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login([Bind("UserName,Password")] LoginViewModel loginViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var userExist = (from u in _context.User
+                                 where u.UserName == loginViewModel.UserName && u.Password == loginViewModel.Password 
+                                 select u).ToList();
+                if (userExist.Count > 0)
+                {
+                    return RedirectToAction("ProductDashboard", "Product"); // Redirect to product dashboard on successful login
+                }
+                else
+                {
+                    ViewData["ErrorMessage"] = "Username or password invalid.";
+                }
+            }
+            return View(loginViewModel);
+        }
+
         // GET: User/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
