@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -119,6 +123,15 @@ namespace OnlineShopping.Controllers
                                  select u).ToList();
                 if (userExist.Count > 0)
                 {
+                    List<Claim> claims = new List<Claim>();
+                    Claim claim = new Claim(ClaimTypes.Email, loginViewModel.UserName);
+                    claims.Add(claim);
+                    Claim claim1 = new Claim(ClaimTypes.Role, userExist[0].UserType);
+                    claims.Add(claim1);
+                    ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal);
+
                     return RedirectToAction("ProductDashboard", "Product"); // Redirect to product dashboard on successful login
                 }
                 else
