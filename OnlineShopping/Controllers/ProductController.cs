@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using OnlineShopping.Models;
 
 namespace OnlineShopping.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
         private readonly OnlineShoppingContext _context;
@@ -26,6 +28,7 @@ namespace OnlineShopping.Controllers
             return View(await onlineShoppingContext.ToListAsync());
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> ProductDashboard(string? title)
         {
             if (string.IsNullOrEmpty(title))
@@ -39,6 +42,7 @@ namespace OnlineShopping.Controllers
             }
         }
 
+        [AllowAnonymous]
         // GET: Product/Details/5
         public async Task<IActionResult> Details(int? id)
         {

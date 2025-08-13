@@ -14,6 +14,7 @@ using OnlineShopping.Models;
 
 namespace OnlineShopping.Controllers
 {
+    [Authorize]
     public class UserController : Controller
     {
         private readonly OnlineShoppingContext _context;
@@ -69,6 +70,7 @@ namespace OnlineShopping.Controllers
             return View(user);
         }
 
+        [AllowAnonymous]
         public IActionResult Register()
         {
             return View();
@@ -77,6 +79,7 @@ namespace OnlineShopping.Controllers
         // POST: User/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register([Bind("UserName,Password, ConfirmPassword")] RegisterViewModel registerViewModel)
@@ -104,6 +107,7 @@ namespace OnlineShopping.Controllers
             return View(registerViewModel);
         }
 
+        [AllowAnonymous]
         public IActionResult Login()
         {
             return View();
@@ -112,6 +116,7 @@ namespace OnlineShopping.Controllers
         // POST: User/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login([Bind("UserName,Password")] LoginViewModel loginViewModel)
@@ -140,6 +145,12 @@ namespace OnlineShopping.Controllers
                 }
             }
             return View(loginViewModel);
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("ProductDashboard", "Product");
         }
 
         // GET: User/Edit/5
