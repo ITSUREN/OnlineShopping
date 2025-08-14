@@ -14,7 +14,7 @@ using OnlineShopping.Models;
 
 namespace OnlineShopping.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "admin")]
     public class UserController : Controller
     {
         private readonly OnlineShoppingContext _context;
