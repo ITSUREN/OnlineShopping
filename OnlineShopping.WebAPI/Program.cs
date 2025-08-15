@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using OnlineShopping.WebAPI.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<OnlineShoppingWebAPIContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("OnlineShoppingWebAPIContext") ?? throw new InvalidOperationException("Connection string 'OnlineShoppingWebAPIContext' not found.")));
 
 // Add services to the container.
 
