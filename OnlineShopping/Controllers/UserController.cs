@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OnlineShopping.Models.ViewModels;
-using OnlineShopping.Services.Interfaces;
+using OnlineShopping.Core.Interfaces;
 using OnlineShopping.Core.Entities;
 
 namespace OnlineShopping.Controllers

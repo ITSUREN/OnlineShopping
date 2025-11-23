@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OnlineShopping.Core\OnlineShopping.Core.csproj" />
-    <ProjectReference Include="..\OnlineShopping.Services\OnlineShopping.Services.csproj" />
   </ItemGroup>
 	
 </Project>

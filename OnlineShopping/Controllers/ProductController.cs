@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using OnlineShopping.Services.Interfaces;
+using OnlineShopping.Core.Interfaces;
 using OnlineShopping.Core.Entities;
 
 namespace OnlineShopping.Controllers
