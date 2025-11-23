@@ -1,6 +1,6 @@
 ﻿using System.Net.Http.Headers;
 
-namespace OnlineShopping.Models
+namespace OnlineShopping.Models.Domain
 {
     public class Category
     {

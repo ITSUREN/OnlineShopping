@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using OnlineShopping.Models;
+using OnlineShopping.Models.ViewModels;
 
 namespace OnlineShopping.Controllers
 {

@@ -1,4 +1,4 @@
-﻿namespace OnlineShopping.Models
+﻿namespace OnlineShopping.Models.Domain
 {
     public class Product
     {

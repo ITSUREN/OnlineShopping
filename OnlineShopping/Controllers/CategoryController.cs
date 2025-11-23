@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using OnlineShopping.Data;
-using OnlineShopping.Models;
+using OnlineShopping.Models.Domain;
 
 namespace OnlineShopping.Controllers
 {
