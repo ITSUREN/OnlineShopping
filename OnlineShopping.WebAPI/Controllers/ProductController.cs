@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineShopping.Core.Entities;
-using OnlineShopping.Services.Interfaces;
+using OnlineShopping.Core.Interfaces;
 
 namespace OnlineShopping.WebAPI.Controllers
 {
