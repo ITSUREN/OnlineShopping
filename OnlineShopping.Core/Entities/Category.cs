@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net.Http.Headers;
 
-namespace OnlineShopping.Core
+namespace OnlineShopping.Core.Entities
 {
     public class Category
     {

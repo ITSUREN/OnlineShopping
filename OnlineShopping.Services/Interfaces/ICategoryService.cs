@@ -1,4 +1,4 @@
-﻿using OnlineShopping.Models.Domain;
+﻿using OnlineShopping.Core.Entities;
 
 namespace OnlineShopping.Services.Interfaces
 {

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using OnlineShopping.Models.Domain;
+using OnlineShopping.Core.Entities;
 
-namespace OnlineShopping.Data
+namespace OnlineShopping.Infrastructure.Data
 {
     public class OnlineShoppingContext : DbContext
     {
-        public OnlineShoppingContext (DbContextOptions<OnlineShoppingContext> options)
+        public OnlineShoppingContext(DbContextOptions<OnlineShoppingContext> options)
             : base(options)
         {
         }

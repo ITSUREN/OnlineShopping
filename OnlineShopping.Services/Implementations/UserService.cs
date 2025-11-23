@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OnlineShopping.Data;
-using OnlineShopping.Models.Domain;
+using OnlineShopping.Infrastructure.Data;
+using OnlineShopping.Core.Entities;
 using OnlineShopping.Services.Interfaces;
 
 namespace OnlineShopping.Services.Implementations

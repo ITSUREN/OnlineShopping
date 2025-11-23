@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using OnlineShopping.Core;
-using OnlineShopping.WebAPI.Data;
+﻿using Microsoft.AspNetCore.Mvc;
+using OnlineShopping.Core.Entities;
+using OnlineShopping.Services.Interfaces;
 
 namespace OnlineShopping.WebAPI.Controllers
 {
@@ -14,95 +8,60 @@ namespace OnlineShopping.WebAPI.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly OnlineShoppingWebAPIContext _context;
+        private readonly ICategoryService _service;
 
-        public CategoryController(OnlineShoppingWebAPIContext context)
+        public CategoryController(ICategoryService service)
         {
-            _context = context;
+            _service = service;
         }
 
-        // GET: api/Category
+        // GET: api/category
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Category>>> GetCategory()
+        public async Task<IActionResult> GetAll()
         {
-            return await _context.Category.ToListAsync();
+            var categories = await _service.GetAllAsync();
+            return Ok(categories);
         }
 
-        // GET: api/Category/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Category>> GetCategory(int id)
+        // GET: api/category/5
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> Get(int id)
         {
-            var category = await _context.Category.FindAsync(id);
-
-            if (category == null)
-            {
-                return NotFound();
-            }
-
-            return category;
+            var category = await _service.GetByIdAsync(id);
+            return category == null ? NotFound() : Ok(category);
         }
 
-        // PUT: api/Category/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCategory(int id, Category category)
+        // POST: api/category
+        [HttpPost]
+        public async Task<IActionResult> Create(Category category)
+        {
+            await _service.CreateAsync(category);
+            return CreatedAtAction(nameof(Get), new { id = category.Id }, category);
+        }
+
+        // PUT: api/category/5
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> Update(int id, Category category)
         {
             if (id != category.Id)
-            {
-                return BadRequest();
-            }
+                return BadRequest("Id mismatch");
 
-            _context.Entry(category).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CategoryExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/Category
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Category>> PostCategory(Category category)
-        {
-            _context.Category.Add(category);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetCategory", new { id = category.Id }, category);
-        }
-
-        // DELETE: api/Category/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCategory(int id)
-        {
-            var category = await _context.Category.FindAsync(id);
-            if (category == null)
-            {
+            if (!await _service.ExistsAsync(id))
                 return NotFound();
-            }
 
-            _context.Category.Remove(category);
-            await _context.SaveChangesAsync();
-
+            await _service.UpdateAsync(category);
             return NoContent();
         }
 
-        private bool CategoryExists(int id)
+        // DELETE: api/category/5
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> Delete(int id)
         {
-            return _context.Category.Any(e => e.Id == id);
+            if (!await _service.ExistsAsync(id))
+                return NotFound();
+
+            await _service.DeleteAsync(id);
+            return NoContent();
         }
     }
 }

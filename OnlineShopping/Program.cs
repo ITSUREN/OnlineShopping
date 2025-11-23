@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using OnlineShopping.Data;
+using OnlineShopping.Infrastructure.Data;
 using OnlineShopping.Services.Implementations;
 using OnlineShopping.Services.Interfaces;
 

@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using OnlineShopping.Models.Domain;
 using OnlineShopping.Models.ViewModels;
 using OnlineShopping.Services.Interfaces;
+using OnlineShopping.Core.Entities;
 
 namespace OnlineShopping.Controllers
 {

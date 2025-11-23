@@ -1,7 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace OnlineShopping.Models.Domain
+namespace OnlineShopping.Core.Entities
 {
     public class User
     {
