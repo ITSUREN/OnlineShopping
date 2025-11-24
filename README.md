@@ -12,14 +12,14 @@
 </p>
 &nbsp;
       
-<p align="center">Get Closest is an academic project built to study the <strong>.NET Core</strong>. The Application implements <strong>>MVC Web UI</strong> and <strong>Swagger API</strong> with </strong>CRUD</strong> Operations on a <strong>SQL EXPRESS</strong> Database aswell as basic <strong>Cookie Authentication</strong>, <strong>Authorization</strong> and <strong>XSRF AntiForgery Tokens</strong> on the Web UI Front with <strong>Dependency Inversion Principle (DIP)</strong> and a hint of <strong>>Domain Driven Design (DDD) Principle</strong></p>
+<p align="center">Online Shopping is an academic project built to study the <strong>.NET Core</strong>. The Application implements <strong>MVC Web UI</strong> and <strong>Swagger API</strong> with <strong>CRUD</strong> Operations on a <strong>SQL EXPRESS</strong> Database aswell as basic <strong>Cookie Authentication</strong>, <strong>Authorization</strong> and <strong>XSRF AntiForgery Tokens</strong> on the Web UI Front with <strong>Dependency Inversion Principle (DIP)</strong> and a hint of <strong>Domain Driven Design (DDD)</strong> Principles</p>
 
 ## 3️⃣-Layered Clean-ish Architecture 
 <div style="background: #FFF3CD; color: #856404; padding: 12px 15px; border-left: 6px solid #FFEEBA; border-radius: 4px;">
-  <strong>⚠️ Warning:</strong> This project doesn't use any encryption scheme whatsoever to store it's password and Encrypt Option for Database access has been set to false.
+  <strong>⚠️ Warning:</strong> This project doesn't use any encryption scheme whatsoever to store it's user passwords and Encrypt Option for Database access has been set to false.
 </div>
 Adapted from a 4-Layered Design down to a 3-Layered Clean-ish Architecture
-<figure style="display:flex; flex-direction: column;">
+<figure style="display:flex; flex-direction: column; align-items: center;">
     <img src="./OnlineShopping.Web/wwwroot/ProductImages/3 Layered Architecture.drawio.png" width="500px">
     <figcaption> figure 1: 3-layered Clean-ish Architecture; horizontal layer view of the project</figcaption>
 </figure>
