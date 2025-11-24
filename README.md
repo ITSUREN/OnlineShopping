@@ -35,7 +35,7 @@ Adapted from a 4-Layered Design down to a 3-Layered Clean-ish Architecture
 
 Thanks for making this project possible:
 
-| <img alt="Issues" src="https://avatars.githubusercontent.com/u/42739895?v=4" width="25" height="25"> | <a href="https://github.com/ITSURENXD">Saugat Tamang</a> |
+| <img alt="Issues" src="https://avatars.githubusercontent.com/u/42739895?v=4" width="25" height="25"> | <a href="https://github.com/ITSUREN">Saugat Tamang</a> |
 |----------------|----------------|
 | <img alt="Issues" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpluspng.com%2Fimg-png%2Fpng-user-icon-icons-logos-emojis-users-2400.png&f=1&nofb=1&ipt=a2ec1f10194e1ba07f627f86a5d553246dc48b683d72dc6f265a6e6e482c3a94" width="25" height="25"> | Professors at ASCol |
 
