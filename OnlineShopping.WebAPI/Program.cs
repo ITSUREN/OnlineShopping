@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using OnlineShopping.Services.Implementations;
-using OnlineShopping.Services.Interfaces;
+using OnlineShopping.Infrastructure.Implementations;
+using OnlineShopping.Core.Interfaces;
 using OnlineShopping.Infrastructure.Data;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<OnlineShoppingContext>(options =>
