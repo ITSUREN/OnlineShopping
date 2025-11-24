@@ -12,7 +12,7 @@
 </p>
 &nbsp;
       
-<p align="center">Get Closest is an academic project built to study the **.NET Core**. The Application implements **MVC Web UI** and **Swagger API** with **CRUD** Operations on a **SQL EXPRESS** Database aswell as basic **Cookie Authentication**, **Authorization** and **XSRF AntiForgery Tokens** on the Web UI Front with **Dependency Inversion Principle (DIP)** and a hint of **Domain Driven Design (DDD) Principle**</p>
+<p align="center">Get Closest is an academic project built to study the <strong>.NET Core</strong>. The Application implements <strong>>MVC Web UI</strong> and <strong>Swagger API</strong> with </strong>CRUD</strong> Operations on a <strong>SQL EXPRESS</strong> Database aswell as basic <strong>Cookie Authentication</strong>, <strong>Authorization</strong> and <strong>XSRF AntiForgery Tokens</strong> on the Web UI Front with <strong>Dependency Inversion Principle (DIP)</strong> and a hint of <strong>>Domain Driven Design (DDD) Principle</strong></p>
 
 ## 3️⃣-Layered Clean-ish Architecture 
 <div style="background: #FFF3CD; color: #856404; padding: 12px 15px; border-left: 6px solid #FFEEBA; border-radius: 4px;">
