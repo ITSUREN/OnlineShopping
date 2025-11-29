@@ -1,8 +1,6 @@
 <h3 align="center">
 	<img src="./OnlineShopping.Web/wwwroot/ProductImages/OnlineShoppingFavicon.png" width="200" alt="Logo"/><br/>
-	<img src="https://github.com/ITSURENXD/Graphics/blob/bd657f55d4a8417d32914cc0bab738200310085a/NOTES/Resources/transparent.png" height="30" width="0px"/>
 	Online Shopping
-	<img src="https://github.com/ITSURENXD/Graphics/blob/bd657f55d4a8417d32914cc0bab738200310085a/NOTES/Resources/transparent.png" height="30" width="0px"/>
 </h3> 
 <p align="center">
 	<a href="https://github.com/ITSUREN/OnlineShopping/releases">
