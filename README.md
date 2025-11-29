@@ -7,7 +7,7 @@
 <p align="center">
 	<a href="https://github.com/ITSUREN/OnlineShopping/releases">
 		<img alt="Releases" src="https://img.shields.io/github/v/release/ITSUREN/OnlineShopping?style=for-the-badge&logo=github&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41"/></a>
-	<a href="https://github.com/ITSURENXD/OnlineShopping/issues">
+	<a href="https://github.com/ITSUREN/OnlineShopping/issues">
 		<img alt="Issues" src="https://img.shields.io/github/issues/ITSUREN/OnlineShopping?style=for-the-badge&logo=gitbook&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41"></a>
 </p>
 &nbsp;
@@ -16,7 +16,7 @@
 
 ## 3️⃣-Layered Clean-ish Architecture 
 > [!WARNING]
-> This project doesn't use any encryption scheme whatsoever to store it's user passwords and Encrypt Option for Database access has been set to false.
+> This project doesn't use any encryption scheme whatsoever to store its user passwords, and the Encrypt Option for Database access has been set to false.
 
 Adapted from a 4-Layered Design down to a 3-Layered Clean-ish Architecture
 <figure style="display:flex; flex-direction: column; align-items: center;">
@@ -27,7 +27,7 @@ Adapted from a 4-Layered Design down to a 3-Layered Clean-ish Architecture
 &nbsp;
 ### 🤔 Project Come To Be
 
-- **Academic Project**: Learning by implementing the features of .NET Core library.
+- **Academic Project**: Learning by implementing the features of the .NET Core library.
 
 &nbsp;
 
