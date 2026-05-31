@@ -41,7 +41,7 @@ Thanks for making this project possible:
 
 ### 📜 License
 
-Get Closest is released under the [MIT license](./LICENSE.txt), which grants the following permissions:
+Online Shopping is released under the [MIT license](./LICENSE.txt), which grants the following permissions:
 
 - Commercial use
 - Distribution
